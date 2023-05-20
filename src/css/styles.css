@@ -33,7 +33,7 @@
   
   html {
     /* Set the font globally */
-    font-family: var(--sans-font);
+    font-family: serif;
     scroll-behavior: smooth;
   }
   
@@ -141,4 +141,55 @@
   
   a:hover {
     text-decoration: none;
+  }
+
+  /*  */
+
+  body {
+    font-family: serif;
+  }
+
+  h3, h4 {
+    padding: 0;
+    margin: 0;
+  }
+
+  .center-wrapper {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(218, 165, 68);
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 50px 50px 0 0;
+    box-shadow: rgb(230, 139, 117) 10px 10px 0px 0px;
+    align-items: center;
+    gap:15px;
+  }
+
+  .icon-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+  
+  .icon-buttons a {
+    color: white;
+    padding: 5px 13px;
+    background-color: #0d47a1;
+    border-radius: 3px;
+  }
+  
+  .link-tiles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width:100%;
+  }
+  
+  .link-tiles a {
+    border-radius: 3px;
+    padding: 24px;
+    color: black;
   }
