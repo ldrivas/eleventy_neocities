@@ -293,11 +293,8 @@ li:active {
     /* Reduce nav side on mobile for index-wrapper*/
     @media only screen and (max-width: 750px) {
       .index-wrapper {
-        border: none;
-        padding: 0;
-        color: var(--accent);
-        text-decoration: underline;
-        line-height: 1;
+        width: auto;
+        max-width: 90%;
       }
     }
 
