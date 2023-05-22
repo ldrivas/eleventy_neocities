@@ -172,6 +172,20 @@ a {
     gap:15px;
   }
   
+  .index-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #F4EBD2;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 50px 50px 0 0;
+    box-shadow: rgb(230, 139, 117) 10px 10px 0px 0px;
+    align-items: center;
+    gap:15px;
+    width:545px;
+    margin: 0 auto;
+  }
+
   .link-tiles {
     display: flex;
     flex-direction: column;
