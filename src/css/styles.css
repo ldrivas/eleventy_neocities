@@ -17,6 +17,18 @@ a {
     --border: #d8dae1;
     --accent: #0d47a1;
   }
+
+  /* from chat gpt */
+
+  a {
+    color: var(--accent); /* Set link text color to accent color */
+    text-decoration: underline; /* Add underline to all links */
+  }
+  
+  a.accent {
+    color: #0d47a1; /* Set the default accent text color */
+    text-decoration-color: #ffb300; /* Set the underline color for the accent text */
+  }
   
   /* Dark theme */
   @media (prefers-color-scheme: dark) {
@@ -26,12 +38,24 @@ a {
       --text: #dcdcdc;
       --text-light: #ababab;
       --border: #666;
-      --accent: #ffb300;
+      --accent: #0d47a1;
     }
   }
   
   * {
     box-sizing: border-box;
+  }
+  
+   /* from chat gpt */
+
+   a {
+    color: var(--accent); /* Set link text color to accent color */
+    text-decoration: underline; /* Add underline to all links */
+  }
+  
+  a.accent {
+    color: #0d47a1; /* Set the default accent text color */
+    text-decoration-color: #ffb300; /* Set the underline color for the accent text */
   }
   
   html {
