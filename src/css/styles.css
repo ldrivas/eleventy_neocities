@@ -290,6 +290,17 @@ li:active {
     }
   }
   
+    /* Reduce nav side on mobile for index-wrapper*/
+    @media only screen and (max-width: 750px) {
+      .index-wrapper {
+        border: none;
+        padding: 0;
+        color: var(--accent);
+        text-decoration: underline;
+        line-height: 1;
+      }
+    }
+
   /* Reduce header size on mobile */
   @media only screen and (max-width: 720px) {
     h1 {
