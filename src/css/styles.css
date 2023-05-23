@@ -360,3 +360,27 @@ li:active {
   }
 
   /* from Chat GPT */
+
+  .container {
+    position: relative;
+}
+
+.spark {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ffcc00; /* Adjust color as desired */
+    animation: sparkAnimation 1s ease-out;
+}
+
+@keyframes sparkAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
