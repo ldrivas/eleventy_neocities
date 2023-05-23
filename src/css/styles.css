@@ -127,6 +127,17 @@ a {
     margin-right: 0;
   }
   
+  a,
+  a:visited {
+    display: inline-block;
+    transition: transform .07s ease-out;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    transform: translate(0px, -2px);
+  }
+  
   /* Reduce nav side on mobile */
   @media only screen and (max-width: 750px) {
     nav a {
