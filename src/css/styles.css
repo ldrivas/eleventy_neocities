@@ -224,6 +224,18 @@ a {
     gap:15px;
   }
   
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #B5BC8E;
+    border: 1px solid black;
+    padding: 20px;
+    align-items: center;
+    gap:15px;
+    width:545px;
+    margin: 0 auto;
+  }
+
   .index-wrapper {
     display: flex;
     flex-direction: column;
