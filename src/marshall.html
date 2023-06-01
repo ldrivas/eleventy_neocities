@@ -6,18 +6,33 @@ layout: layout_with_header.njk
 <head>
   <title>Covid Marshall Party</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    h1 {
-      text-align: center;
-      color: #333333;
-    }
-    img {
-      display: block;
-      margin: 0 auto;
-      max-width: 300px;
-      margin-top: 20px;
+     body {
+    font-family: Arial, sans-serif;
+  }
+  h1 {
+    text-align: center;
+    color: #333333;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; /* Make sure images don't exceed their parent's width */
+    margin-top: 20px;
+  }
+  
+  .image-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    flex-wrap: wrap; /* Allow the images to wrap onto the next line if needed */
+  }
+  .image-container img {
+    width: 100%; /* Full width on small screens */
+    max-width: 300px; /* But no wider than 300px */
+    box-sizing: border-box; /* So that padding doesn't add to the width */
+  }
+  .spacer {
+        margin-right: 20px; /* Add margin at the bottom */
     }
   </style>
 </head>
