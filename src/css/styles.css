@@ -200,6 +200,7 @@ img {
   border-radius: 3px;
   padding: 24px;
   color: black;
+  text-align: left;
 }
 
 /* Social media icons */
@@ -240,12 +241,15 @@ img {
 .avatar-container {
   display: flex;
   justify-content: center;
-  max-width: var(--avatar-max-width);
-  max-height: var(--avatar-max-width);
-  margin: 1rem 0 1.5rem;
+  height: 180px;
+  /* margin: 1rem 0 1.5rem; */
 }
 
 .avatar {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  max-width: var(--avatar-max-width);
+  max-height: var(--avatar-max-width);
   border-radius: 50%;
   box-shadow: 10px 10px 0px 0px pink;
   background-color: #d89294;
