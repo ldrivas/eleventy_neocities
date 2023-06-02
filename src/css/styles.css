@@ -42,7 +42,8 @@ body {
   background-image: url(/img/tumblr_inline_mlky22MWwd1r53miq.png);
   background-repeat: repeat;
   padding-top: 50px;
-  font-family: Arial, sans-serif
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
 body>header {
@@ -54,6 +55,10 @@ body>header {
 body>header h1 {
   max-width: 100%;
   margin: 1rem auto;
+}
+
+li {
+  text-align: left;
 }
 
 a,
@@ -106,6 +111,19 @@ h3,
 h4 {
   padding: 0;
   margin: 0;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%; /* Make sure images don't exceed their parent's width */
+  margin-top: 20px;
+}
+
+.image-container img {
+  width: 100%; /* Full width on small screens */
+  max-width: 300px; /* But no wider than 300px */
+  box-sizing: border-box; /* So that padding doesn't add to the width */
 }
 
 /* reduce sizes on mobile */
