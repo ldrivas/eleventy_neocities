@@ -12,6 +12,8 @@
   --text-light: #f9f9f9;
   --border: #d8dae1;
   --accent: #0d47a1;
+
+  --avatar-max-width: 140px;
 }
 
 * {
@@ -68,7 +70,7 @@ a:hover {
   transform: translate(0px, -2px);
 }
 
-a .accent {
+a.accent {
   color: #0d47a1;
   /* Set the default accent text color */
   text-decoration-color: #FFD932;
@@ -205,14 +207,12 @@ li:active {
 .avatar-container {
   display: flex;
   justify-content: center;
-  max-width: 140px;
-  max-height: 140px;
-}
-
-.avatar {
   max-width: var(--avatar-max-width);
   max-height: var(--avatar-max-width);
   margin: 1rem 0 1.5rem;
+}
+
+.avatar {
   border-radius: 50%;
   box-shadow: 10px 10px 0px 0px pink;
   background-color: #d89294;
