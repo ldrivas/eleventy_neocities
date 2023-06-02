@@ -65,16 +65,17 @@ a:visited {
   /* Add underline to all links */
 }
 
-a:hover {
+a:hover, li:hover {
   text-decoration: none;
   transform: translate(0px, -2px);
 }
 
+a:active, li:active {
+  transform: translateY(0px);
+}
+
 a.accent {
-  color: #0d47a1;
-  /* Set the default accent text color */
   text-decoration-color: #FFD932;
-  /* Set the underline color for the accent text */
 }
 
 /* Add a little padding to ensure spacing is correct between content and nav */
@@ -101,12 +102,34 @@ h2 {
   margin-top: 3rem;
 }
 
-/* put background images under here */
-
 h3,
 h4 {
   padding: 0;
   margin: 0;
+}
+
+/* reduce sizes on mobile */
+@media only screen and (max-width: 750px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2.1rem;
+  }
+
+  .index-wrapper {
+    width: auto;
+    max-width: 98%;
+  }
+  
+  nav a {
+    border: none;
+    padding: 0;
+    color: var(--accent);
+    text-decoration: underline;
+    line-height: 1;
+  }
 }
 
 .center-wrapper {
@@ -195,14 +218,6 @@ h4 {
   border-radius: 10px;
 }
 
-li:hover {
-  transform: translateY(-2px);
-}
-
-li:active {
-  transform: translateY(0px);
-}
-
 /* Image specified in settings.json avatarImage property */
 .avatar-container {
   display: flex;
@@ -258,30 +273,6 @@ li:active {
 .rightspacer {
   max-width: 100%;
   word-wrap: break-word;
-}
-
-/* Reduce header size on mobile */
-@media only screen and (max-width: 750px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2.1rem;
-  }
-
-  .index-wrapper {
-    width: auto;
-    max-width: 98%;
-  }
-  
-  nav a {
-    border: none;
-    padding: 0;
-    color: var(--accent);
-    text-decoration: underline;
-    line-height: 1;
-  }
 }
 
 /* from Chat GPT */
