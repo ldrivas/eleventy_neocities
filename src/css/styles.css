@@ -121,6 +121,14 @@ img {
   margin-top: 20px;
 }
 
+video {
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  max-height: 500px; 
+  margin-top: 20px;
+}
+
 .image-container img {
   width: 100%; /* Full width on small screens */
   max-width: 300px; /* But no wider than 300px */
