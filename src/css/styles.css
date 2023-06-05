@@ -297,8 +297,9 @@ video {
 }
 
 /* Apply the font to a class or selector */
-Expand All
-	@@ -329,11 +303,13 @@ li:active {
+.wticon {
+  font-family: "wticons";
+}
 
 /* Example usage */
 .icon-account:before {
@@ -312,8 +313,7 @@ Expand All
 }
 
 /* Add more icon classes as needed */
-Expand All
-	@@ -344,65 +320,41 @@ li:active {
+li:active {
   margin: 0 4px;
 }
 
