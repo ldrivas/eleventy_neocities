@@ -1,0 +1,27 @@
+---
+title: Interactive Map
+layout: layout_with_header.njk
+---
+
+<h1>Interactive Map</h1>
+<p>
+  Text 
+</p>
+<div id="image-container">
+    <img src="/img/map.png" alt="Adelaide CBD" usemap="#image-map">
+    <map name="image-map">
+      <area shape="rect" coords="400,400,480,480" data-popup="popup1">
+      <area shape="rect" coords="x3,y3,x4,y4" data-popup="popup2">
+      <!-- Add more areas as needed -->
+    </map>
+  </div>
+  
+  <div id="popup1" class="popup">
+    <img src="photo1.jpg" alt="Photo 1">
+    <p>Text details for popup 1.</p>
+  </div>
+  
+  <div id="popup2" class="popup">
+    <img src="photo2.jpg" alt="Photo 2">
+    <p>Text details for popup 2.</p>
+  </div>

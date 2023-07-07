@@ -1,3 +1,5 @@
+/* animation for cursor */
+
 document.addEventListener('click', function(event) {
     var target = event.target;
  
@@ -16,3 +18,33 @@ document.addEventListener('click', function(event) {
         }, 1000);
     }
  });
+
+ /* map */
+
+ document.addEventListener('DOMContentLoaded', function() {
+    const areas = document.querySelectorAll('area');
+    const popups = document.querySelectorAll('.popup');
+  
+    areas.forEach(area => {
+      area.addEventListener('click', function() {
+        const popupId = area.getAttribute('data-popup');
+        const popup = document.getElementById(popupId);
+  
+        if (popup) {
+          popups.forEach(popup => {
+            popup.style.display = 'none';
+          });
+  
+          popup.style.display = 'block';
+        }
+      });
+    });
+  
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.popup') && !event.target.closest('area')) {
+        popups.forEach(popup => {
+          popup.style.display = 'none';
+        });
+      }
+    });
+  });
