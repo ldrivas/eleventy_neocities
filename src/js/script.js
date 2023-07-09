@@ -24,6 +24,7 @@ document.addEventListener('click', function(event) {
  document.addEventListener('DOMContentLoaded', function() {
     const areas = document.querySelectorAll('area');
     const popups = document.querySelectorAll('.popup');
+    const imageMap = document.getElementById('image-map');
   
     areas.forEach(area => {
       area.addEventListener('click', function() {
@@ -33,17 +34,20 @@ document.addEventListener('click', function(event) {
         if (popup) {
           popups.forEach(popup => {
             popup.style.display = 'none';
+            imageMap.style.filter = 'grayscale(0%) brightness(1)';
           });
-  
+          
           popup.style.display = 'block';
+          imageMap.style.filter = 'grayscale(75%) brightness(0.5)';
         }
       });
     });
-  
+    
     document.addEventListener('click', function(event) {
       if (!event.target.closest('.popup') && !event.target.closest('area')) {
         popups.forEach(popup => {
           popup.style.display = 'none';
+          imageMap.style.filter = 'grayscale(0%) brightness(1)';
         });
       }
     });
