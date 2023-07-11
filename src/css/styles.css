@@ -362,7 +362,7 @@ li:active {
   }
 }
 
-/* from Chat GPT for map */
+/* from Chat GPT for map image */
 
 .popup {
   display: none;;
@@ -391,8 +391,17 @@ li:active {
  * Always set the map height explicitly to define the size of the div element
  * that contains the map. 
  */
- #map {
-  height: 100%;
+
+
+#map {
+  height: 400px; /* Set the initial height of the map container */
+  width: 100%; /* Set the initial width of the map container */
+}
+
+@media (max-width: 768px) {
+  #map {
+    height: 300px; /* Adjust the height for smaller screens */
+  }
 }
 
 

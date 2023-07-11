@@ -19,7 +19,7 @@ document.addEventListener('click', function(event) {
     }
  });
 
- /* map */
+ /* map image */
 
  document.addEventListener('DOMContentLoaded', function() {
     const areas = document.querySelectorAll('area');
