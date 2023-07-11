@@ -11,27 +11,38 @@ layout: layout_with_header.njk
 <div id="map"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrgJNybY1lbcWtF_fV5y3a3vsmB4ZxPg&callback=initMap" async defer></script>
 <script>
-  function initMap() {
-  // Create a new map instance
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: -34.9285, lng: 138.6007 }, // Set the center of the map to Adelaide CBD coordinates
-    zoom: 14 // Set the initial zoom level
-  });
-
-  // Create an array of locations with their coordinates and titles
-  var locations = [
-    { lat: -34.9285, lng: 138.6007, title: 'Adelaide CBD' },
-    // Add more locations here as needed
-  ];
-
-  // Iterate through the locations array and create markers for each location
-  for (var i = 0; i < locations.length; i++) {
-    var location = locations[i];
-    var marker = new google.maps.Marker({
-      position: { lat: location.lat, lng: location.lng },
-      map: map,
-      title: location.title
-    });
-  }
-}
-</script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: -34.9285, lng: 138.6007 },
+        zoom: 14
+      });
+  
+      var locations = [
+        { lat: -34.9285,
+            lng: 138.6007,
+            title: 'Adelaide CBD',
+            content: '<h3>This is the Adelaide CBD.</h3></div><div><img src="/img/map.png" alt="Adelaide CBD Image" width="200" height="auto"></div><div><p><br>Adelaide city centre (Kaurna: Tarndanya) is the inner city locality of Greater Adelaide, the capital city of South Australia. It is known by locals simply as "the City" or "Town" to distinguish it from Greater Adelaide and from the City of Adelaide local government area (which also includes North Adelaide and from the Park Lands around the whole city centre). The population was 15,115 in the 2016 census.<p><br>Attribution: Adelaide city centre, <a href="https://en.wikipedia.org/wiki/Adelaide_city_centre">https://en.wikipedia.org/wiki/Adelaide_city_centre</a> (last visited 11 July 2023)</p>'
+        },
+        // Add more locations here as needed
+      ];
+  
+      for (var i = 0; i < locations.length; i++) {
+        var location = locations[i];
+        var marker = new google.maps.Marker({
+          position: { lat: location.lat, lng: location.lng },
+          map: map,
+          title: location.title
+        });
+  
+        // Create an InfoWindow object and set its content
+        var infoWindow = new google.maps.InfoWindow({
+          content: location.content
+        });
+  
+        // Attach the InfoWindow to the marker's click event
+        marker.addListener('click', function () {
+          infoWindow.open(map, marker);
+        });
+      }
+    }
+  </script>

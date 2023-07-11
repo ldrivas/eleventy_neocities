@@ -385,7 +385,7 @@ li:active {
   margin-top: 10px;
 }
 
-/* Google map */
+/* Google map from Chat GPT */
 
 /* 
  * Always set the map height explicitly to define the size of the div element
@@ -404,4 +404,15 @@ li:active {
   }
 }
 
+/* Style the InfoWindow */
+.gm-style-iw {
+  background-color: #ffffff; /* Set the background color */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Add a shadow */
+  padding: 10px; /* Add padding */
+  font-size: 14px; /* Set the font size */
+  max-width: 300px; /* Set the maximum width */
+}
 
+.gm-style-iw h1, .gm-style-iw p {
+  margin: 0; /* Remove margins for title and content */
+}
