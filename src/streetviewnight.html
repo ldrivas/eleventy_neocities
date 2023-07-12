@@ -26,21 +26,11 @@ layout: layout_with_header.njk
       window.location.href = "/"; // Replace "/" with the appropriate URL of your home/index page
     }
       });
-
-      // Add click event listener to the toggle button
-      const toggleButton = document.getElementById('toggleButton');
-      const imageEntity = document.getElementById('imageEntity');
-      let isVisible = true;
-
-      toggleButton.addEventListener('click', function toggleImage() {
-        isVisible = !isVisible;
-        imageEntity.setAttribute('visible', isVisible);
-      });
       });
     </script>
     <style>
       #overlay {
-        position: absolute;
+        position: fixed;
         top: 100px;
         left: 100px;
         width: 1418;
@@ -54,27 +44,17 @@ layout: layout_with_header.njk
     left: 20px;
     z-index: 2;
   }
-
-  #toggleButton {
-      position: fixed;
-      bottom: 20px; /* Position at the bottom */
-      left: 50%; /* Center horizontally */
-      transform: translateX(-50%); /* Adjust horizontally to center */
-      z-index: 2;
-      padding: 10px 20px; /* Increase padding for bigger button */
-      font-size: 18px; /* Increase font size */
-  }
     </style>
   </head>
   <body>
     <h1>Panorama</h1>
     <a-scene>
       <!-- Add your 360-degree image as the background -->
-      <a-sky src="/img/hindmarshpan.jpg"></a-sky>
+      <a-sky src="/img/bryan.jpg"></a-sky>
   
       <!-- Add custom image overlays as entities -->
-      <a-entity id="overlay" position="-16 2 -9" rotation="0 12 0"> <!-- position lets you adjust the placement of the image & rotation helps you adjust the tilt-->
-        <a-image src="/img/hindmarsh.jpg" scale="13 13 13" id="imageEntity"></a-image> <!-- scale lets you adjust the size of the image-->
+      <a-entity id="overlay" position="0 2 -4">
+        <a-image src="/img/hindmarsh.jpg"></a-image>
       </a-entity>
   
       <!-- Add camera and controls -->
@@ -82,8 +62,7 @@ layout: layout_with_header.njk
         <a-cursor></a-cursor>
       </a-camera>
 
-      <!-- Add buttons -->
+      <!-- Add back button -->
     <button id="backButton">Back to map view</button>
-    <button id="toggleButton">Toggle Image</button>
     </a-scene>
   </body>
