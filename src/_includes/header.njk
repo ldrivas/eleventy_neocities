@@ -1,1 +1,15 @@
-<a href="javascript:history.go(-1);" class="accent"><h2 class="center-wrapper">Back to previous page</h2></a>
+<a href="#" onclick="goBack();" class="accent">
+  <h2 class="center-wrapper">Back to previous page</h2>
+</a>
+
+<script>
+  function goBack() {
+    if (history.length > 1) {
+      // If there is a previous page in the tab's history, go back
+      history.go(-1);
+    } else {
+      // If there is no previous page, redirect to the home/index page
+      window.location.href = "/"; // Replace "/" with the appropriate URL of your home/index page
+    }
+  }
+</script>
