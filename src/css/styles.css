@@ -1,3 +1,5 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+
 :root {
   /* Set sans-serif & mono fonts */
   --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
@@ -198,6 +200,26 @@ video {
   box-shadow: rgb(230, 139, 117) 10px 10px 0px 0px;
   align-items: center;
   gap: 15px;
+}
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #F4EBD2;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 50px 50px 0 0;
+  box-shadow: rgb(230, 139, 117) 10px 10px 0px 0px;
+  align-items: flex-start; /* Change from "center" to "flex-start" */
+  gap: 15px;
+}
+
+.accent {
+  margin-right: 10px; /* Add margin to create a gap */
+}
+
+.accent.small {
+  width: auto; /* Remove the width property */
 }
 
 .footer-wrapper {
