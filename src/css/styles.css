@@ -36,6 +36,10 @@ a:hover, area:hover {
   cursor: crosshair;
 }
 
+.place-item:hover {
+  cursor: crosshair;
+}
+
 /* Make the body a nice central block */
 body {
   color: var(--text);
@@ -424,6 +428,26 @@ li:active {
   #map {
     height: 300px; /* Adjust the height for smaller screens */
   }
+}
+
+.infowindow-content {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.infowindow-content a {
+  word-break: break-all;
+}
+
+.place-item {
+  cursor: pointer;
+  padding: 5px;
+  background-color: #f1f1f1;
+  margin-bottom: 5px;
+}
+
+.place-item:hover {
+  background-color: #ddd;
 }
 
 /* Style the InfoWindow */
