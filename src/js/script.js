@@ -78,7 +78,7 @@ function initMap() {
   var openedInfoWindow = null; // Track the associated InfoWindow
 
   
-    // Added location data in separate file labeled location.js
+    // Added location data in separate file labeled locations.js
 
     var markers = []; // Array to store all markers
   var infoWindows = [];
