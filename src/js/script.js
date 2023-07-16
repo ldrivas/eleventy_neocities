@@ -128,22 +128,38 @@ function initMap() {
     var filterCafe = document.getElementById('filterCafe').checked;
     var filterRestaurant = document.getElementById('filterRestaurant').checked;
     var filterRating = document.getElementById('filterRating').checked;
-
+  
     for (var i = 0; i < markers.length; i++) {
       var marker = markers[i];
       var isVisible =
         (filterCafe && marker.category === 'cafe') ||
         (filterRestaurant && marker.category === 'restaurant') ||
         (filterRating && marker.rating >= 5);
-
+  
       marker.setVisible(isVisible);
-
+  
       var listItem = document.getElementById('placeItem_' + i);
       if (listItem) {
         listItem.style.display = isVisible ? 'table-cell' : 'none';
       }
     }
   }
+  
+  function selectDeselectAll() {
+    var selectAll = document.getElementById('selectAll');
+    var filterCafe = document.getElementById('filterCafe');
+    var filterRestaurant = document.getElementById('filterRestaurant');
+    var filterRating = document.getElementById('filterRating');
+  
+    var isChecked = selectAll.checked;
+  
+    filterCafe.checked = isChecked;
+    filterRestaurant.checked = isChecked;
+    filterRating.checked = isChecked;
+  
+    filterMarkers();
+  }
+
 
   function createPlaceList() {
     var placeList = document.getElementById('placeList');
@@ -205,6 +221,7 @@ function initMap() {
   createPlaceList();
   filterMarkers();
 
+  document.getElementById('selectAll').addEventListener('change', selectDeselectAll);
   document.getElementById('filterCafe').addEventListener('change', filterMarkers);
   document.getElementById('filterRestaurant').addEventListener('change', filterMarkers);
   document.getElementById('filterRating').addEventListener('change', filterMarkers);
