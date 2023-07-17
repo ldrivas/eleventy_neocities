@@ -9,11 +9,16 @@
 
 <script>
   function goBack() {
-    if (history.length > 1) {
-      // If there is a previous page in the tab's history, go back
-      history.go(-1);
+    var currentPath = window.location.pathname;
+    var segments = currentPath.split('/').filter(Boolean); // Split the path and remove empty segments
+
+    if (segments.length > 1) {
+      // If there are more than 1 segment in the path, go back one segment
+      segments.pop(); // Remove the last segment
+      var newPath = '/' + segments.join('/') + '/'; // Reconstruct the new path
+      window.location.href = newPath;
     } else {
-      // If there is no previous page, redirect to the home/index page
+      // If there is no previous segment, redirect to the home/index page
       window.location.href = "/"; // Replace "/" with the appropriate URL of your home/index page
     }
   }
