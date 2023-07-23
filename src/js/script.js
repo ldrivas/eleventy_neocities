@@ -136,10 +136,21 @@ function initMap() {
         var isRestaurant = (marker.category.indexOf('restaurant') !== -1);
         var hasHighRating = (marker.rating >= 5);
 
+        // Filter according to checkboxes first (step 1)
         var isVisible = 
-            (filterCafe && (isCafe || isRestaurant)) || // If slider is ON, show both cafes and restaurants
-            (!filterCafe && isCafe) || // If slider is OFF, show only cafes
-            (filterRating && hasHighRating);
+            (filterRestaurant && isRestaurant) ||
+            (filterRating && hasHighRating) || 
+            (filterCafe && isCafe); // this line is just for the completeness, but we will deal with it in step 2 below
+
+        // If none of the step 1 checkboxes are selected, all markers should be invisible
+        if(!filterRestaurant && !filterRating && !filterCafe) {
+            isVisible = false;
+        }
+
+        // Slider control (step 2). If slider is off, override the visibility to show cafes only among the selected types from step 1
+        if(!document.getElementById('filterCafe').checked) {
+            isVisible = isVisible && isCafe; 
+        }
   
         marker.setVisible(isVisible);
   
