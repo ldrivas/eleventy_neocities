@@ -128,30 +128,32 @@ function initMap() {
     var filterCafe = document.getElementById('filterCafe').checked;
     var filterRestaurant = document.getElementById('filterRestaurant').checked;
     var filterRating = document.getElementById('filterRating').checked;
-  
+
+    var anyCheckboxSelected = filterRestaurant || filterRating; // Checks if any Step 1 filter is active
+
     for (var i = 0; i < markers.length; i++) {
         var marker = markers[i];
-        
+
         var isCafe = (marker.category.indexOf('cafe') !== -1);
         var isRestaurant = (marker.category.indexOf('restaurant') !== -1);
         var hasHighRating = (marker.rating >= 5);
 
-        // Filter according to checkboxes first (step 1)
-        var isVisible = 
-            (filterRestaurant && isRestaurant) ||
-            (filterRating && hasHighRating) || 
-            (filterCafe && isCafe); // this line is just for the completeness, but we will deal with it in step 2 below
+        var isVisible = false;
 
-        // If none of the step 1 checkboxes are selected, all markers should be invisible
-        if(!filterRestaurant && !filterRating && !filterCafe) {
+        // Check the Step 1 filters
+        if (filterRestaurant && isRestaurant) isVisible = true;
+        if (filterRating && hasHighRating) isVisible = true;
+
+        // If no Step 1 filters are selected, do nothing
+        if (!anyCheckboxSelected) {
             isVisible = false;
+        } else {
+            // If Step 1 filters are active, and slider is ON, then refine the results to show only cafes
+            if (filterCafe) {
+                isVisible = isVisible && isCafe; // Refine the isVisible condition
+            }
         }
 
-        // Slider control (step 2). If slider is off, override the visibility to show cafes only among the selected types from step 1
-        if(!document.getElementById('filterCafe').checked) {
-            isVisible = isVisible && isCafe; 
-        }
-  
         marker.setVisible(isVisible);
   
         var listItem = document.getElementById('placeItem_' + i);
@@ -161,20 +163,18 @@ function initMap() {
     }
 }
 
-  function selectDeselectAll() {
-    var selectAll = document.getElementById('selectAll');
-    var filterCafe = document.getElementById('filterCafe');
-    var filterRestaurant = document.getElementById('filterRestaurant');
-    var filterRating = document.getElementById('filterRating');
-  
-    var isChecked = selectAll.checked;
-  
-    filterCafe.checked = isChecked;
-    filterRestaurant.checked = isChecked;
-    filterRating.checked = isChecked;
-  
-    filterMarkers();
-  }
+function selectDeselectAll() {
+  var selectAll = document.getElementById('selectAll');
+  var filterRestaurant = document.getElementById('filterRestaurant');
+  var filterRating = document.getElementById('filterRating');
+
+  var isChecked = selectAll.checked;
+
+  filterRestaurant.checked = isChecked;
+  filterRating.checked = isChecked;
+
+  filterMarkers();
+}
 
 
   function createPlaceList() {
