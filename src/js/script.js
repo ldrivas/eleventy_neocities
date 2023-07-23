@@ -163,17 +163,17 @@ function initMap() {
     }
 }
 
-function selectDeselectAll() {
-  var selectAll = document.getElementById('selectAll');
-  var filterRestaurant = document.getElementById('filterRestaurant');
-  var filterRating = document.getElementById('filterRating');
+  function selectDeselectAll() {
+    var selectAll = document.getElementById('selectAll');
+    var filterRestaurant = document.getElementById('filterRestaurant');
+    var filterRating = document.getElementById('filterRating');
 
-  var isChecked = selectAll.checked;
+    var isChecked = selectAll.checked;
 
-  filterRestaurant.checked = isChecked;
-  filterRating.checked = isChecked;
+    filterRestaurant.checked = isChecked;
+    filterRating.checked = isChecked;
 
-  filterMarkers();
+    filterMarkers();
 }
 
 

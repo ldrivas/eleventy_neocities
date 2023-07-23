@@ -514,14 +514,8 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-#sliderTooltip {
-  background: #e74c3c;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  position: absolute;
-  top: 40px;
-  z-index: 10;
-  white-space: nowrap;
-  display: none; /* hidden by default */
+.toggle-container {
+  display: inline-block; /* Add this line to make the container inline */
+  vertical-align: middle; /* Add this line to align the container vertically with the slider */
+  margin-right: 10px; /* Optional: Add some space between the slider and the text */
 }
