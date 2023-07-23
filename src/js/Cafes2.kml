@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Cafes</name>
+    <Style id="icon-1899-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Placemark>
+      <name>Cafe Brunelli</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.606741,-34.9227416,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Kafi:n</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6077371,-34.9224562,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Howling Owl</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.608944,-34.92211,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Exeter Hotel</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.608789,-34.922385,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Austral</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6073716,-34.9226768,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Schnithouse Rundle St</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6092606,-34.9222619,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Grill'd Rundle St]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.606841,-34.922763,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Fire ADL</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6058689,-34.9231727,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>San Giorgio</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.607769,-34.922803,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Dumplings R Us</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6068614,-34.9228123,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Betty's Burgers]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6075693,-34.9226692,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Yiros House</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.609147,-34.922308,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Eros Kafe</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6097861,-34.9225972,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Bun Cha Vietnamese Restaurant</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6087406,-34.9213487,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Felici Espresso Bar</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6092292,-34.9226055,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Exchange Coffee</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6097945,-34.9228308,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Belgian Beer Cafe</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.609481,-34.92278,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Nano Cafe</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.609548,-34.923069,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hey Jupiter Brasserie Francaise</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.609112,-34.9229742,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Two-Bit Villains</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6037722,-34.922975,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Remy's - Deep Dish Pizza & Bar]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6030779,-34.9231263,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Sylvia’s Cafe</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6047373,-34.9234553,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>NanYang Cafe</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6044465,-34.9221252,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Coles Rundle Place</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.602719,-34.9237022,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>KFC Myer Centre Food Court</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6008388,-34.9225841,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>David Jones - Adelaide Central Plaza</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6032697,-34.9224888,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Cafe Bang Bang</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5973437,-34.9233261,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Phonatic Restaurant</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5929263,-34.9234818,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Peter Rabbit</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5903667,-34.9233449,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Yianni's on Hindley]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5895492,-34.9233868,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Waffle & Coffee]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5978,-34.92378,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Bibliotheca Bar and Book Exchange</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5987656,-34.9226049,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Sunny's Pizza]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.596026,-34.924008,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Afghan Charcoal Kebab House</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.597108,-34.923284,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Honki Tonki Hindley Street</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5979527,-34.9229445,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Extra chicken salt</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5980536,-34.9242018,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Indian Delights - Adelaide</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6061618,-34.9342296,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[SPICE & SPOON]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6036759,-34.9311809,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Veggo Sizzle - Vegan & Vegetarian Restaurant, Adelaide]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6061339,-34.9348351,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Golden Wattle</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6040014,-34.9254328,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Lira Pizza & Kebab]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6061487,-34.9341584,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Little Korea BBQ</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6045505,-34.9263864,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Seoul Sisters</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6034411,-34.9325146,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Greek on Halifax</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6032166,-34.9329544,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Jack & Jill's Bar and Restaurant]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.604281,-34.9257576,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Zuma Caffe</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5972215,-34.9300599,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Xiao Long Kan Chinese Hotpot Adelaide</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.594794,-34.9306356,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hot Star Large Fried Chicken</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.596324,-34.9290083,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Hotel Metropolitan</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5973594,-34.9285622,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>My Kingdom For a Horse</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.592773,-34.932057,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[John Doe's Local Bar]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5940107,-34.9345133,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Café Troppo</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.59512,-34.9333122,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>UniBar Adelaide</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6035555,-34.9184984,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Royal Adelaide Hospital</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5871711,-34.9209375,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Strathmore Hotel</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5968161,-34.9218626,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[The King's Head Hotel]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.5998717,-34.9326681,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Treasury 1860</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.600088,-34.926723,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Crown and Sceptre Hotel</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6004083,-34.9310986,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>So Urban BBQ</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6000802,-34.9341189,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Citi Zen Restaurant</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6001359,-34.9345153,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Mugen House</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6006057,-34.9345315,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Bocelli Caffe Ristorante</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.6117597,-34.9282768,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Soonta Rundle Mall Plaza</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          138.601562,-34.9224881,0
+        </coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

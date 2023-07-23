@@ -7,16 +7,21 @@ layout: layout_with_header.njk
 <div>
   <input type="checkbox" id="selectAll" checked>
   <label for="selectAll">Select/Deselect All</label>
-  <input type="checkbox" id="filterCafe" checked>
-  <label for="filterCafe">Serves coffee</label>
-  <input type="checkbox" id="filterRestaurant" checked>
+    <input type="checkbox" id="filterRestaurant" checked>
   <label for="filterRestaurant">Restaurant</label>
   <input type="checkbox" id="filterRating" checked>
   <label for="filterRating">5 Stars or more</label>
+</div>
+<div>
+  
+  <label class="switch">
+    <input type="checkbox" id="filterCafe" checked>
+    <span class="slider round"></span>
+  </label>
+  <span id="cafeToggleLabel">Showing all locations (turn off to only show coffee locations)</span>
 </div>
 <div id="placeList" class="place-list"></div>
 <div id="map"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYrgJNybY1lbcWtF_fV5y3a3vsmB4ZxPg&callback=initMap" async defer></script>
 <script src="/js/script.js"></script>
 <script src="/js/locations.js"></script>
-  

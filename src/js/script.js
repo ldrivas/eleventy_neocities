@@ -130,21 +130,26 @@ function initMap() {
     var filterRating = document.getElementById('filterRating').checked;
   
     for (var i = 0; i < markers.length; i++) {
-      var marker = markers[i];
-      var isVisible =
-        (filterCafe && marker.category === 'cafe') ||
-        (filterRestaurant && marker.category === 'restaurant') ||
-        (filterRating && marker.rating >= 5);
+        var marker = markers[i];
+        
+        var isCafe = (marker.category.indexOf('cafe') !== -1);
+        var isRestaurant = (marker.category.indexOf('restaurant') !== -1);
+        var hasHighRating = (marker.rating >= 5);
+
+        var isVisible = 
+            (filterCafe && (isCafe || isRestaurant)) || // If slider is ON, show both cafes and restaurants
+            (!filterCafe && isCafe) || // If slider is OFF, show only cafes
+            (filterRating && hasHighRating);
   
-      marker.setVisible(isVisible);
+        marker.setVisible(isVisible);
   
-      var listItem = document.getElementById('placeItem_' + i);
-      if (listItem) {
-        listItem.style.display = isVisible ? 'table-cell' : 'none';
-      }
+        var listItem = document.getElementById('placeItem_' + i);
+        if (listItem) {
+            listItem.style.display = isVisible ? 'table-cell' : 'none';
+        }
     }
-  }
-  
+}
+
   function selectDeselectAll() {
     var selectAll = document.getElementById('selectAll');
     var filterCafe = document.getElementById('filterCafe');
