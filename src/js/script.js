@@ -91,6 +91,7 @@ function initMap() {
       title: location.title,
       category: location.category,
       rating: location.rating,
+      opennow: location.opennow,
       content: location.content
     });
 
@@ -128,8 +129,9 @@ function initMap() {
     var filterCafe = document.getElementById('filterCafe').checked;
     var filterRestaurant = document.getElementById('filterRestaurant').checked;
     var filterRating = document.getElementById('filterRating').checked;
+    var filterOpennow = document.getElementById('filterOpennow').checked;
 
-    var anyCheckboxSelected = filterRestaurant || filterRating; // Checks if any Step 1 filter is active
+    var anyCheckboxSelected = filterRestaurant || filterRating || filterOpennow; // Checks if any Step 1 filter is active
 
     for (var i = 0; i < markers.length; i++) {
         var marker = markers[i];
@@ -137,12 +139,14 @@ function initMap() {
         var isCafe = (marker.category.indexOf('cafe') !== -1);
         var isRestaurant = (marker.category.indexOf('restaurant') !== -1);
         var hasHighRating = (marker.rating >= 5);
+        var isOpenNow = (marker.openingHours >= 5);
 
         var isVisible = false;
 
         // Check the Step 1 filters
         if (filterRestaurant && isRestaurant) isVisible = true;
         if (filterRating && hasHighRating) isVisible = true;
+        if (filterOpennow && isOpenNow) isVisible = true;
 
         // If no Step 1 filters are selected, do nothing
         if (!anyCheckboxSelected) {
@@ -151,6 +155,7 @@ function initMap() {
             // If Step 1 filters are active, and slider is ON, then refine the results to show only cafes
             if (filterCafe) {
                 isVisible = isVisible && isCafe; // Refine the isVisible condition
+
             }
         }
 
@@ -167,11 +172,13 @@ function initMap() {
     var selectAll = document.getElementById('selectAll');
     var filterRestaurant = document.getElementById('filterRestaurant');
     var filterRating = document.getElementById('filterRating');
+    var filterOpennow= document.getElementById('filterOpennow');
 
     var isChecked = selectAll.checked;
 
     filterRestaurant.checked = isChecked;
     filterRating.checked = isChecked;
+    filterOpennow.checked = isChecked;
 
     filterMarkers();
 }
@@ -241,4 +248,19 @@ function initMap() {
   document.getElementById('filterCafe').addEventListener('change', filterMarkers);
   document.getElementById('filterRestaurant').addEventListener('change', filterMarkers);
   document.getElementById('filterRating').addEventListener('change', filterMarkers);
+  document.getElementById('filterOpennow').addEventListener('change', filterMarkers);
 }
+
+function getCurrentDayAndTimeInAdelaide() {
+  const current = new Date();
+  const utc = current.getTime() + current.getTimezoneOffset() * 60000;
+  const offset = 9.5 * 60; // Adelaide's UTC offset in minutes
+  const adelaideDate = new Date(utc + (offset * 60000));
+  const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  const day = days[adelaideDate.getDay()];
+  const hours = adelaideDate.getHours();
+  const minutes = adelaideDate.getMinutes();
+  const timeInMinutes = hours * 60 + minutes;
+  return { day, timeInMinutes };
+}
+

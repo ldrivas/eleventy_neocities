@@ -519,3 +519,4 @@ input:checked + .slider:before {
   vertical-align: middle; /* Add this line to align the container vertically with the slider */
   margin-right: 10px; /* Optional: Add some space between the slider and the text */
 }
+
