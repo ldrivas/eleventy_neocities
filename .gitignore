@@ -7,7 +7,9 @@ node_modules
 public
 
 # Service account key and other secrets
+
 secrets
 
 # File uploads
+
 uploads
