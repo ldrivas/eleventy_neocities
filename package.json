@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
+    "start": "concurrently \"npx @11ty/eleventy --serve\" \"node src/js/server.js\"",
     "build": "npx @11ty/eleventy"
   },
   "keywords": [],
@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
     "rimraf": "^5.0.0"
   }
-
 }
