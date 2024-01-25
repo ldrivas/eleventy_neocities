@@ -5,3 +5,9 @@ node_modules
 # build artefacts
 
 public
+
+# Service account key and other secrets
+secrets
+
+# File uploads
+uploads
