@@ -7,8 +7,27 @@ layout: vagabond_layout.njk
 <p>
             <h1>Clue #1: Find something ancient and take its picture</h1>
                 <form id="uploadForm" action="https://core-appliance-412305.ts.r.appspot.com/upload" method="post" enctype="multipart/form-data">
+                <input type="text" name="username" placeholder="Username" required>
                 <input type="file" name="image" accept="image/*" required>
                 <button type="submit">Upload Image</button>
             </form>
+            </form>
+            <form id="createFolderForm" action="/create-folder" method="post">
+                <input type="text" name="folderName" placeholder="Folder Name" required>
+                <button type="submit">Create Folder</button>
+              </form>
+              <button id="testCreateFolder">Create Test Folder</button>
         <script src="script.js"></script>
     </body>
+
+
+    <script>
+        // Add an event listener to the test button
+        document.getElementById('testCreateFolder').addEventListener('click', () => {
+          // Fill the folder name input field with a test folder name (e.g., "test-folder")
+          document.querySelector('input[name="folderName"]').value = 'test-folder';
+          
+          // Submit the folder creation form
+          document.getElementById('createFolderForm').submit();
+        });
+      </script>

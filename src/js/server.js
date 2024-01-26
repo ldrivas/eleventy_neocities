@@ -39,6 +39,18 @@ app.post('/upload', upload.single('image'), (req, res, next) => {
   blobStream.end(req.file.buffer);
 });
 
+//new folder
+
+app.post('/create-folder', (req, res) => {
+  const folderName = req.body.folderName; // Get the folder name from the form data
+
+  // Create a new folder in the Google Cloud Storage bucket
+  const folder = bucket.file(folderName + '/');
+  folder.createFile(); // Create an empty file to represent the folder
+
+  res.status(200).send(`Folder '${folderName}' created successfully.`);
+});
+
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
