@@ -5,12 +5,49 @@ layout: vagabond_layout.njk
 
 <h1>VAGABOND</h1>
 <p>
-            <h1>Clue #1: Find something ancient and take its picture</h1>
-                <form id="uploadForm" action="https://core-appliance-412305.ts.r.appspot.com/upload" method="post" enctype="multipart/form-data">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="file" name="image" accept="image/*" required>
+            <h1>Please enter your email to start</h1>
+                <form id="uploadForm" action="" method="post" enctype="multipart/form-data">
+                <input type="text" name="email" placeholder="Email" required>
                 <button type="submit">Upload Image</button>
             </form>
-            </form>
+        
         <script src="script.js"></script>
+<script>
+
+    var Url = "https://core-appliance-412305.ts.r.appspot.com/upload";
+    var dUrl = "http://localhost:3000/upload?stage=clue1";
+
+    function submitForm(e) {
+        e.preventDefault();
+
+        var uploadForm = document.getElementById("uploadForm");
+
+        var formData = new FormData(uploadForm);
+
+        fetch(dUrl, {
+            method: "POST",
+            body: formData,
+        })
+        .then((response) => {
+        if (!response.ok) {
+            throw new Error("network returns error");
+        }
+        return response.json();
+        })
+        .then((resp) => {
+        let respdiv = document.createElement("pre");
+        respdiv.innerHTML = JSON.stringify(resp, null, 2);
+        myform.replaceWith(respdiv);
+        console.log("resp from server ", resp);
+        })
+        .catch((error) => {
+        // Handle error
+        console.log("error ", error);
+        });
+    }
+
+    var myform = document.getElementById("uploadForm");
+    myform.addEventListener("submit", submitForm);
+
+</script>
     </body>

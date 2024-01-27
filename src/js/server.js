@@ -20,12 +20,15 @@ app.use(express.static('public')); // Serve your static files
 
 // Upload route
 app.post('/upload', upload.single('image'), (req, res, next) => {
-  if (!req.file) {
+
+  if (req.query.stage == "email")
+    return emailReg(req, res);
+
+  if (!req.file) 
     return res.status(400).send('No file uploaded.');
-  }
 
   // Create a new blob in the bucket and upload the file data.
-  const blob = bucket.file(req.file.originalname);
+  const blob = bucket.file("vagabond/" + req.body.email + "/" + req.query.stage + "_" + req.file.originalname);
   const blobStream = blob.createWriteStream();
 
   blobStream.on('error', err => next(err));
@@ -33,7 +36,7 @@ app.post('/upload', upload.single('image'), (req, res, next) => {
   blobStream.on('finish', () => {
     // The file is uploaded to Google Cloud Storage
     const publicUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
-    res.status(200).send(`Success, image uploaded to: ${publicUrl}`);
+    res.status(200).send(`Success, please check your emails!`);
   });
 
   blobStream.end(req.file.buffer);
