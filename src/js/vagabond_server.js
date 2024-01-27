@@ -27,6 +27,10 @@ app.post('/upload', upload.single('image'), (req, res, next) => {
   if (!req.file) 
     return res.status(400).send('No file uploaded.');
 
+  return fileUpload(req, res);
+});
+
+function fileUpload(req, res) {
   // Create a new blob in the bucket and upload the file data.
   const blob = bucket.file("vagabond/" + req.body.email + "/" + req.query.stage + "_" + req.file.originalname);
   const blobStream = blob.createWriteStream();
@@ -40,7 +44,25 @@ app.post('/upload', upload.single('image'), (req, res, next) => {
   });
 
   blobStream.end(req.file.buffer);
-});
+}
+
+function emailReg (req, res) {
+  //Validate email here
+  console.log("Got email reg from: " + req.body.email)
+  // Create a new blob in the bucket and upload the file data.
+  const blob = bucket.file("vagabond/" + req.body.email + "/");
+  const blobStream = blob.createWriteStream();
+
+  blobStream.on('error', err => next(err));
+
+  blobStream.on('finish', () => {
+    // The file is uploaded to Google Cloud Storage
+    const publicUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
+    res.status(200).send(`Success, please check your emails!`);
+  });
+
+  blobStream.end("");
+}
 
 // Start the server
 const PORT = process.env.PORT || 3000;

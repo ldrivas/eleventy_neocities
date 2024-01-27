@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npx @11ty/eleventy --serve\" \"node src/js/server.js\"",
+    "start": "concurrently \"npx @11ty/eleventy --serve\" \"node src/js/vagabond_server.js\"",
     "build": "npx @11ty/eleventy"
   },
   "keywords": [],
