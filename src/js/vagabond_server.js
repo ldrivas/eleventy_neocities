@@ -21,6 +21,9 @@ app.use(express.static('public')); // Serve your static files
 // Upload route
 app.post('/upload', upload.single('image'), (req, res, next) => {
 
+  // Allow CORS
+  res.set('Access-Control-Allow-Origin', '*');
+
   if (req.query.stage == "email")
     return emailReg(req, res);
 
