@@ -1,9 +1,16 @@
----
-layout: base.njk
----
+
 <header>
     <a href="/" class="accent small"></a>
 </header>
+
 <div class="center-wrapper">
-    {{ content | safe}}
+    <h1>{{ message }}</h1>
+    <form id="vagabondForm" target="{{ target }}">
+        {% block fields %}
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Upload Image</button>
+        {% endblock %}
+    </form>
 </div>
+
+<script src="../js/vagabond_client.js"></script>

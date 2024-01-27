@@ -10,7 +10,7 @@ function submitForm(e) {
     if (!formData.get("email"))
         formData.set("email", localStorage.getItem("email"))
 
-    fetch(dUrl + "?stage=" + myform.target, {
+    fetch(Url + "?stage=" + myform.target, {
         method: "POST",
         body: formData,
     })
