@@ -3,12 +3,13 @@ title: VAGABOND
 layout: base.njk
 ---
 
-{% extends "vagabond_layout.njk" %}
+<header>
+    <a href="/" class="accent small"></a>
+</header>
 
-{% set target = "email" %}
-{% set message = "Please enter your email to start" %}
+<div class="center-wrapper">
+    <h2>Adventures await. Check back 22/2/24</h2>
+    </form>
+</div>
 
-{% block fields %}
-    <input type="text" name="email" placeholder="Email" required>
-    <button type="submit">Start Playing</button>
-{% endblock %}
+<script src="../js/vagabond_client.js"></script>
