@@ -31,9 +31,143 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
- /* map image */
+ /* map image new javascript version 
+*/
+document.addEventListener('DOMContentLoaded', function() {
+  const areas = document.querySelectorAll('area');
+  const popups = document.querySelectorAll('.popup');
+  const imageMap = document.getElementById('image-map');
+  const imageContainer = document.getElementById('image-container');
+  const alreadyMarked = new Set(sessionStorage.getItem('markedAreas') ? JSON.parse(sessionStorage.getItem('markedAreas')) : []);
 
- document.addEventListener('DOMContentLoaded', function() {
+  // Add event listener to the restart button
+  const restartButton = document.querySelector('.restart-button');
+  restartButton.addEventListener('click', function() {
+      if(restartButton.classList.contains('disabled')) return;
+      sessionStorage.removeItem('markedAreas'); // Clear marked areas from session storage
+      location.reload(); // Refresh the page
+  });
+  
+  // Close all popups by default when page loads
+  popups.forEach(popup => {
+      popup.style.display = 'none';
+  });
+
+  // If areas were already marked from a previous session, show them
+  alreadyMarked.forEach(areaId => {
+      const area = [...areas].find(a => a.getAttribute('data-id') === areaId);
+      if (area) {
+          createMarker(area);
+      }
+  });
+
+  // Update counter initially
+  const counter = document.createElement('div');
+  counter.className = 'counter';
+  counter.innerHTML = `${alreadyMarked.size}/12`;
+  counter.style.top = '20%';
+  counter.style.right = '15%';
+  imageContainer.appendChild(counter);
+
+  areas.forEach(area => {
+      area.addEventListener('click', function(e) {
+          const popupId = area.getAttribute('data-popup');
+          const popup = document.getElementById(popupId);
+          const areaId = area.getAttribute('data-id');
+
+          if (popup) {
+              popups.forEach(popup => {
+                  popup.style.display = 'none';
+                  imageMap.style.filter = 'grayscale(0%) brightness(1)';
+                  counter.style.filter = 'grayscale(0%) brightness(1)';
+                  restartButton.style.filter = 'grayscale(75%) brightness(0.5)';  // <-- Add this line
+                  restartButton.classList.add('disabled');
+              });
+
+              popup.style.display = 'block';
+              imageMap.style.filter = 'grayscale(75%) brightness(0.5)';
+              counter.style.filter = 'grayscale(75%) brightness(0.5)';
+              restartButton.style.filter = 'grayscale(75%) brightness(0.5)';  // <-- Add this line
+
+          }
+
+          if (!alreadyMarked.has(areaId)) {
+              alreadyMarked.add(areaId);
+              // Save the marked areas to session storage
+              sessionStorage.setItem('markedAreas', JSON.stringify([...alreadyMarked]));
+
+              // Update counter value
+              counter.innerHTML = `${alreadyMarked.size}/12`;
+
+              // Create marker
+              createMarker(area);
+          }
+
+          e.stopPropagation();
+      });
+  });
+
+  function createMarker(area) {
+      const marker = document.createElement('div');
+      marker.className = 'x-marker';
+
+      // Get marker coordinates from the area
+      const coordinates = area.getAttribute('data-marker-coordinates').split(',');
+      const x = parseInt(coordinates[0], 10);
+      const y = parseInt(coordinates[1], 10);
+
+      marker.style.left = (x - 10) + 'px';
+      marker.style.top = (y - 10) + 'px';
+
+      imageContainer.appendChild(marker);
+  }
+
+  // Handle the case where the user clicks outside the popup
+  document.addEventListener('click', function(event) {
+      if (!event.target.closest('.popup') && !event.target.closest('area')) {
+          popups.forEach(popup => {
+              popup.style.display = 'none';
+              imageMap.style.filter = 'grayscale(0%) brightness(1)';
+              counter.style.filter = 'grayscale(0%) brightness(1)';
+              restartButton.style.filter = 'none';  // Reset the restart button filter to its default state
+              restartButton.classList.remove('disabled');
+          });
+      }
+  });
+});
+
+// Instructions for dependent tooltip text
+document.addEventListener('DOMContentLoaded', function() {
+  let areas = document.querySelectorAll("#image-container area");
+  let tooltip = document.getElementById("tooltip");
+
+  areas.forEach(function(area) {
+      area.addEventListener("mouseenter", function() {
+          let tooltipText = area.getAttribute("data-tooltip-text");
+          tooltip.textContent = tooltipText;
+          tooltip.style.display = "block";
+      });
+
+      area.addEventListener("mouseleave", function() {
+          tooltip.style.display = "none";
+      });
+  });
+});
+
+// $(document).ready(function() {
+//   $('.image-container').hover(
+//       function() { // Mouse enters the map
+//           $('#fixedTooltip').show();
+//       },
+//       function() { // Mouse leaves the map
+//           $('#fixedTooltip').hide();
+//       }
+//   );
+// });
+
+/* map image original javascript version (no x) 
+
+document.addEventListener('DOMContentLoaded', function() {
     const areas = document.querySelectorAll('area');
     const popups = document.querySelectorAll('.popup');
     const imageMap = document.getElementById('image-map');
@@ -63,7 +197,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
     });
-  });
+});
+
+  */
 
 /* food map */
 
@@ -263,4 +399,5 @@ function getCurrentDayAndTimeInAdelaide() {
   const timeInMinutes = hours * 60 + minutes;
   return { day, timeInMinutes };
 }
+
 

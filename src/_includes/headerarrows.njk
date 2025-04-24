@@ -1,0 +1,75 @@
+<!-- To do: make icon less transparent/change colour 
+Add credit at bottom of map-->
+
+
+<style>
+  .icon-buttons2 {
+  display: inline-block;
+  vertical-align: middle;  /* This aligns it with the surrounding inline content */
+  margin-right: 0.5rem
+}
+.github-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #F4EBD2;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 50px 50px 0 0;
+  box-shadow: rgb(230, 139, 117) 10px 10px 0px 0px;
+  align-items: flex-start; /* Change from "center" to "flex-start" */
+  gap: 15px;
+}
+.icon-buttons3 svg {
+  box-sizing: content-box;
+  padding: 4px;
+}
+/* Hide home-wrapper button for screens with a max width of 768px */
+@media (max-width: 768px) {
+    .home-wrapper {
+        display: none;
+    }
+}
+.nav-arrow {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 1rem;
+  color: var(--accent); /* Same color as other buttons */
+  font-size: 1.5em; /* Adjust size as needed */
+  cursor: pointer;
+  text-decoration: none; /* Removes underline */
+}
+
+.nav-arrow:hover {
+  transform: translate(0px, -2px); /* Same hover effect as other buttons */
+}
+
+.left-arrow {
+  /* Additional styling for the left arrow */
+}
+
+.right-arrow {
+  /* Additional styling for the right arrow */
+}
+.header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;  /* Center children horizontally */
+    justify-content: center;  /* Center children vertically */
+  }
+</style>
+
+<div class="header-container">
+  <a href="/library_guide_chapterpanes/" class="nav-arrow left-arrow"><h2 class="center-wrapper">&lt;</h2></a> <!-- Left arrow -->
+
+  <!-- Your existing buttons -->
+  <a href="/" class="accent small">
+    <h2 class="home-wrapper">
+      <i class="fas fa-home"></i>
+    </h2>
+  </a>
+  <a href="/library_guide_chapterpanes/" onclick="goBack();" class="accent">
+    <h2 class="center-wrapper" style="font-size: 1.5em;">Back to main page</h2>
+  </a>
+  
+  <a href="{{ nextItem.url | url }}" class="nav-arrow right-arrow"><h2 class="center-wrapper">&gt;</h2></a> <!-- Right arrow -->
+</div>

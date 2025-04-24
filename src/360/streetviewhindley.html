@@ -1,0 +1,89 @@
+---
+title: Panorama
+layout: layout_with_header.njk
+---
+
+<head>
+    <meta charset="utf-8">
+    <title>Panorama with Image Overlay</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script>
+      // Remove the VR button
+      document.addEventListener('DOMContentLoaded', function() {
+          const vrButton = document.querySelector('.a-enter-vr-button');
+          if (vrButton) {
+              vrButton.parentNode.removeChild(vrButton);
+          }
+      
+      // Add click event listener to the back button
+      const backButton = document.getElementById('backButton');
+      backButton.addEventListener('click', function goBack() {
+    if (history.length > 1) {
+      // If there is a previous page in the tab's history, go back
+      history.go(-1);
+    } else {
+      // If there is no previous page, redirect to the home/index page
+      window.location.href = "/"; // Replace "/" with the appropriate URL of your home/index page
+    }
+      });
+
+      // Add click event listener to the toggle button
+      const toggleButton = document.getElementById('toggleButton');
+      const imageEntity = document.getElementById('imageEntity');
+      let isVisible = true;
+
+      toggleButton.addEventListener('click', function toggleImage() {
+        isVisible = !isVisible;
+        imageEntity.setAttribute('visible', isVisible);
+      });
+      });
+    </script>
+    <style>
+      #overlay {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        width: 1418;
+        height: 960;
+        z-index: 1;
+      }
+    
+      #backButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+  }
+
+  #toggleButton {
+      position: fixed;
+      bottom: 20px; /* Position at the bottom */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Adjust horizontally to center */
+      z-index: 2;
+      padding: 10px 20px; /* Increase padding for bigger button */
+      font-size: 18px; /* Increase font size */
+  }
+    </style>
+  </head>
+  <body>
+    <h1>Panorama</h1>
+    <a-scene>
+      <!-- Add your 360-degree image as the background -->
+      <a-sky src="/img/360/streetviewhindley.jpg" ></a-sky>
+  
+      <!-- Add custom image overlays as entities -->
+      <a-entity id="overlay" position="-2 3 4" rotation="0 -10 0"> <!-- position lets you adjust the placement of the image & rotation helps you adjust the tilt-->
+        <a-image src="/img/adelaide/hindleysmall.jpg" scale="10 10 10" id="imageEntity"></a-image> <!-- scale lets you adjust the size of the image-->
+      </a-entity>
+  
+      <!-- Add camera and controls -->
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+
+      <!-- Add buttons -->
+    <button id="backButton">Back to map view</button>
+    <button id="toggleButton">Toggle Image</button>
+    </a-scene>
+  </body>

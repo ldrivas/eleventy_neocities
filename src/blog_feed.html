@@ -1,0 +1,17 @@
+---
+title: Blog Feed
+layout: layout_with_header_blogs.njk
+---
+
+<div class="main-container">
+    <div class="blog-feed">
+      {% for post in collections.posts %}
+        <div class="post">
+          <h1><a href="{{ post.url }}">{{ post.data.title }}</a></h1>
+          <div>
+            {% raw %}{{ post.templateContent }}{% endraw %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>

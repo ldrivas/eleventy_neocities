@@ -1,0 +1,145 @@
+<!-- To do: 
+1. Revert to previous code for header wrappers (like on published website)
+2. Make home icon a "back" button instead
+3. Change text color to match color scheme
+4. Crop the picture nicely
+-->
+
+<style>
+  .icon-buttons {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+
+  .github-wrapper, .center-wrapper2 {
+    display: flex;
+    background-color: #F4EBD2;
+    border: 1px solid black;
+    border-radius: 50px 50px 0 0;
+    box-shadow: rgb(230, 139, 117) 10px 10px 0px 0px;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .github-wrapper {
+    flex-direction: column;
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .center-wrapper2 {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .center-wrapper2 img {
+    margin: 0;        
+    max-width: none;  
+    display: inline;  
+    align-items: center;
+  }
+
+  .center-wrapper3 {
+    display: flex;
+    flex-direction: column;
+    background-color: #F4EBD2;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 50px 50px 0 0;
+    box-shadow: rgb(230, 139, 117) 10px 10px 0px 0px;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .icon-buttons3 svg {
+    box-sizing: content-box;
+    padding: 4px;
+  }
+
+  .icon-buttons a {
+    padding-left: 10px;
+  }
+
+  h2.home-wrapper {
+    font-size: 2.6rem;
+  }
+  
+/* Hide home-wrapper button for screens with a max width of 768px */
+@media (max-width: 768px) {
+    .home-wrapper {
+        display: none;
+    }
+}
+
+/* Hide center-wrapper3 button for screens with a max width of 768px */
+@media (max-width: 768px) {
+    .center-wrapper3 {
+        display: none;
+    }
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;  /* Center children horizontally */
+    justify-content: center;  /* Center children vertically */
+}
+</style>
+<!-- if I want to add a home icon next to title insert the following:
+
+<a href="/" class="accent small">
+    <i class="fas fa-home" style="margin-right:40px;"></i></a>
+
+    -->
+
+<div class="header-container">
+<a href="/" class="accent small">
+  <h2 class="home-wrapper">
+    <i class="fas fa-home"></i>
+  </h2>
+</a>
+
+<a href="/" class="accent" style="margin-left:5px;">
+  <h2 class="center-wrapper3">Back to previous page</h2>
+</a>
+</div>
+<br>
+<h1 class="center-wrapper2" style="font-size: 2.4em;">
+  <img src="/img/sketchbook.png"/> Curriculum Vitae
+</h1>
+
+<!-- Commented out the icons for now.
+If you want to include them later, simply uncomment this block -->
+
+<!-- 
+<div class="icon-buttons icon-buttons3">
+  <a aria-label="LinkedIn profile" href="https://linkedin.com/in/lucien-drivas-927881128">
+    <svg class="social-profile-icon" ...></svg>
+  </a>
+  <a aria-label="Send an email" href="mailto:lucien.drivas@gmail.com">
+    <svg class="social-profile-icon" ...></svg>
+  </a>
+</div>
+-->
+
+<script>
+  function goBack() {
+    var currentPath = window.location.pathname;
+    var segments = currentPath.split('/').filter(Boolean);
+
+    if (segments.length > 1) {
+      segments.pop();
+      var newPath = '/' + segments.join('/') + '/';
+      window.location.href = newPath;
+    } else {
+      window.location.href = "/";
+    }
+  }
+</script>
+
+<!-- If I want to include arrow-turn:
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<i class="fa-solid fa-arrow-turn-up fa-rotate-270"></i>
+-->

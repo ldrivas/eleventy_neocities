@@ -1,0 +1,256 @@
+---
+title: Library management systems
+layout: layout_with_header_arrows.njk
+eleventyNavigation:
+  key: onlineContentManagement
+  order: 2
+---
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 2em auto;
+    max-width: 1200px;
+}
+
+p, h1, h2, h3 {
+    margin-top: 0.01rem;
+    margin-bottom: 0.2rem;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-container img,
+.center-wrapper2 img {
+    margin-right: 10px;
+}
+
+.center-wrapper2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.center-wrapper2 img {
+    align-items: center;
+    display: inline;
+    margin: 0;
+    max-width: none;
+}
+
+#image-container {
+    position: relative;
+}
+
+h1.center-wrapper2 {
+    font-size: 2.4em;
+}
+
+  .contact-title {
+      font-size: 2.4em;
+      text-decoration: underline;
+  }
+
+  .contact-title img {
+      width: 55px;
+      height: auto;
+  }
+  /* Styles for the chapters and sections sidebars */
+  .chapters-sidebar, .sections-sidebar {
+  position: fixed;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #f4f4f4; /* Choose a background color */
+  padding: 20px;
+  box-shadow: 2px 0px 5px rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+
+.chapters-sidebar {
+  left: 0;
+}
+
+.sections-sidebar {
+  left: 200px; /* Adjust as per the width of the chapters sidebar */
+}
+
+/* Style for both sidebar's list items */
+.chapters-sidebar ul, .sections-sidebar ul {
+  list-style: none; /* Removes bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.chapters-sidebar ul li, .sections-sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.chapters-sidebar ul li a, .sections-sidebar ul li a {
+  text-decoration: none;
+  color: #333; /* Blackish color */
+  font-weight: bold; /* Makes text bold */
+}
+
+.chapters-sidebar ul li a:hover, .sections-sidebar ul li a:hover {
+  color: #0275d8; /* Change color on hover */
+}
+
+/* Additional styles to ensure main content does not hide under the sidebars */
+body {
+  padding-left: 420px; /* Adjusted based on total width of both sidebars */
+}
+
+@media (max-width: 768px) {
+  .chapters-sidebar, .sections-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .chapters-sidebar ul li, .sections-sidebar ul li {
+    display: inline; /* or use 'block' for a vertical list */
+  }
+}
+</style>
+<nav class="chapters-sidebar">
+    <ul>
+      <li><a href="#" onclick="showSections('chapter1')">Library, Curriculum, and Innovation</a></li>
+      <li><a href="#" onclick="showSections('chapter2')">Library resources</a></li>
+      <!-- more links
+      <li><a href="#" onclick="showSections('chapter3')">General Duties</a></li>
+      <li><a href="#" onclick="showSections('chapter4')">Additional Typical Duties</a></li>
+      <li><a href="#" onclick="showSections('chapter5')">Skill Development and Tips</a></li>
+      <li><a href="#" onclick="showSections('chapter6')">Promote Ignatian Ethos</a></li> -->
+      <!-- More chapters -->
+    </ul>
+  </nav>
+  
+  <nav class="sections-sidebar">
+    <ul id="chapter1">
+        <li><a href="#library-management-systems">Library Management Systems</a></li>
+        <li><a href="#online-content-management">Online Content Management</a></li>
+        <li><a href="#online-content-management">Re-shelving and Stocktaking</a></li>
+        <li><a href="#online-content-management">Cataloguing New Materials</a></li>
+          <li><a href="#sdfsdfds">Professional Communication</a></li>
+          <li><a href="#library-management-systems">Adapting to Varied Tasks</a></li>
+          <li><a href="#online-content-management">Participation in School Events</a></li>
+          <li><a href="#library-management-systems">Library Organisation</a></li>
+          <li><a href="#online-content-management">Technology Assistance</a></li>
+          <li><a href="#library-management-systems">Organisational Skills</a></li>
+          <li><a href="#online-content-management">Creativity in Displays and Events</a></li>
+          <li><a href="#library-management-systems">Understanding Ignatian Principles</a></li>
+          <li><a href="#online-content-management">Incorporating Ignatian Values</a></li>
+          <li><a href="#online-content-management">Engaging with the School Community</a></li>
+      <!-- Sections for Chapter 1 -->
+    </ul>
+    <ul id="chapter2" class="hidden">
+        <li><a href="http://library.com">Library.com</a></li>
+        <li><a href="http://library.com">Tafe Certificate</a></li>
+        <li><a href="http://library.com">TES Magazine</a></li>
+      <!-- Sections for Chapter 2 -->
+      <!-- More sections -->
+    </ul>
+    <ul id="chapter3">
+        <li><a href="#library-management-systems">Adapting to Varied Tasks</a></li>
+        <li><a href="#online-content-management">Participation in School Events</a></li>
+        <!-- Sections for Chapter 1 -->
+      </ul>
+      <ul id="chapter4">
+        <li><a href="#library-management-systems">Library Organisation</a></li>
+        <li><a href="#online-content-management">Technology Assistance</a></li>
+        <!-- Sections for Chapter 1 -->
+      </ul>
+      <ul id="chapter5">
+        <li><a href="#library-management-systems">Organisational Skills</a></li>
+        <li><a href="#online-content-management">Creativity in Displays and Events</a></li>
+        <!-- Sections for Chapter 1 -->
+      </ul>
+      <ul id="chapter6">
+        <li><a href="#library-management-systems">Understanding Ignatian Principles</a></li>
+        <li><a href="#online-content-management">Incorporating Ignatian Values</a></li>
+        <li><a href="#online-content-management">Engaging with the School Community</a></li>
+        <!-- Sections for Chapter 1 -->
+      </ul>
+    <!-- More chapters' sections -->
+  </nav>
+  
+  <main>
+    <h3 class="center-wrapper2 contact-title"><img src="/img/blog.png" alt="Contact Icon">Library management systems</h3>
+    <p>What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        
+        Why do we use it?
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        
+        
+        Where does it come from?
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+        
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+        
+        Where can I get some?
+        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+  
+    <p>Email: <a href="mailto:lucien@lucien.contact">lucien@lucien.contact</a></p>
+    <p>Github: <a href="https://github.com/ldrivas">/ldrivas/</a></p>
+    <p>Linkedin: <a href="https://linkedin.com/in/lucien-drivas-927881128">/in/lucien-drivas-927881128/</a></p>
+  
+    <section id="library-management-systems">
+      <h2>Library Management Systems</h2>
+      <!-- Content for Library Management Systems -->
+    </section>
+  </main>
+  
+  <script>
+    function showSections(chapterId) {
+      // Hide all sections
+      document.querySelectorAll('.sections-sidebar ul').forEach(function(ul) {
+        ul.style.display = 'none'; // Use 'display: none' to hide
+      });
+  
+      // Show the selected chapter's sections
+      var selectedChapter = document.getElementById(chapterId);
+      if (selectedChapter) {
+        selectedChapter.style.display = 'block'; // Use 'display: block' to show
+      }
+    }
+  
+    // Set the default visible sections to Chapter 1 on page load
+    window.onload = function() {
+      showSections('chapter1');
+    };
+  </script>
+
+<script>
+  const pages = [
+    '/library_management_systems.html',
+    '/online_content_management.html',
+    // ... add more pages as per their order
+  ];
+
+  function getNextPage() {
+    const currentPage = window.location.pathname;
+    const currentIndex = pages.findIndex(page => currentPage.endsWith(page));
+
+    if (currentIndex >= 0 && currentIndex < pages.length - 1) {
+      return pages[currentIndex + 1];
+    }
+
+    return null; // or some default page if you're at the last page
+  }
+
+  window.onload = function() {
+    const nextPage = getNextPage();
+    if (nextPage) {
+      document.querySelector('.right-arrow').setAttribute('href', nextPage);
+    }
+  };
+</script>

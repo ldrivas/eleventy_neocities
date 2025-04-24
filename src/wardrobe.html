@@ -1,0 +1,132 @@
+<style>
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.wardrobe {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.category {
+    margin: 10px;
+}
+
+.category img {
+    width: 100px;
+    cursor: pointer;
+    margin: 10px;
+    border: 2px solid transparent;
+}
+
+.category img.selected {
+    border: 2px solid blue;
+}
+
+.outfit-preview {
+    margin-top: 20px;
+}
+
+.outfit-preview #selected-outfit {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Wardrobe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Virtual Wardrobe</h1>
+    <div class="wardrobe">
+        <div class="category" id="tops">
+            <h2>Tops</h2>
+            
+            <!-- Add images of tops here -->
+        </div>
+        <div class="category" id="bottoms">
+            <h2>Bottoms</h2>
+            <!-- Add images of bottoms here -->
+        </div>
+        <div class="category" id="shoes">
+            <h2>Shoes</h2>
+            <!-- Add images of shoes here -->
+        </div>
+    </div>
+    <div class="outfit-preview">
+        <h2>Outfit Preview</h2>
+        <div id="selected-outfit"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const wardrobe = {
+        tops: [],
+        bottoms: [],
+        shoes: []
+    };
+
+    // Preload your wardrobe items
+    preloadWardrobe();
+
+    document.querySelectorAll('.category img').forEach(img => {
+        img.addEventListener('click', (e) => {
+            const category = e.target.closest('.category').id;
+            document.querySelectorAll(`#${category} img`).forEach(i => i.classList.remove('selected'));
+            e.target.classList.add('selected');
+            updateOutfitPreview();
+        });
+    });
+
+    function preloadWardrobe() {
+        wardrobe.tops = [
+            '../wardrobe/shirt1.jpg'
+        ];
+        wardrobe.bottoms = [
+            '../wardrobe/skirt1.jpg'
+        ];
+        wardrobe.shoes = [
+            '../wardrobe/1.jpg',
+            '../wardrobe/2.jpg'
+        ];
+
+        loadImages('tops', wardrobe.tops);
+        loadImages('bottoms', wardrobe.bottoms);
+        loadImages('shoes', wardrobe.shoes);
+    }
+
+    function loadImages(category, images) {
+        const container = document.getElementById(category);
+        images.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            container.appendChild(img);
+        });
+    }
+
+    function updateOutfitPreview() {
+        const selectedOutfit = document.getElementById('selected-outfit');
+        selectedOutfit.innerHTML = '';
+
+        document.querySelectorAll('.category img.selected').forEach(img => {
+            const imgClone = img.cloneNode();
+            imgClone.classList.remove('selected');
+            selectedOutfit.appendChild(imgClone);
+        });
+    }
+});
+
+
+</script>

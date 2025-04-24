@@ -1,0 +1,262 @@
+---
+title: Heritage Map
+layout: layout_with_header.njk
+---
+
+<!-- :) -->
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      margin: 2em auto;
+      max-width: 800px;
+  }
+
+  p, h1, h2, h3 {
+      margin-top: 0.01rem;
+      margin-bottom: 0.2rem;
+  }
+  
+  .header-container {
+      display: flex;
+      align-items: center;
+  }
+  
+  .header-container img,
+  .center-wrapper2 img {
+      margin-right: 10px;
+  }
+
+  .center-wrapper2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+  }
+
+  .center-wrapper2 img {
+      align-items: center;
+      display: inline;
+      margin: 0;
+      max-width: none;
+  }
+
+  #image-container {
+      position: relative;
+  }
+  
+  h1.center-wrapper2 {
+      font-size: 2.4em;
+  }
+
+  /* Reset the cursor for the entire document */
+html, body {
+    cursor: default;
+}
+
+/* Set the custom cursor for the body of the page */
+body {
+    cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFGmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDYgNzkuMTY0NjQ4LCAyMDIxLzAxLzEyLTE1OjUyOjI5ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjIuMiAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjEtMDMtMDRUMTY6Mzc6NDUtMDU6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIxLTAzLTA0VDE2OjM5OjMyLTA1OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIxLTAzLTA0VDE2OjM5OjMyLTA1OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjkwZDMzNzUzLTAwOGEtNDE1NS04MTc1LTIwZjkwZWYxOTdiYyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5MGQzMzc1My0wMDhhLTQxNTUtODE3NS0yMGY5MGVmMTk3YmMiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5MGQzMzc1My0wMDhhLTQxNTUtODE3NS0yMGY5MGVmMTk3YmMiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjkwZDMzNzUzLTAwOGEtNDE1NS04MTc1LTIwZjkwZWYxOTdiYyIgc3RFdnQ6d2hlbj0iMjAyMS0wMy0wNFQxNjozNzo0NS0wNTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIyLjIgKE1hY2ludG9zaCkiLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/umE5AAAAHJJREFUOI3NlEEOwCAIBN3G/3+ZHpptCJEqhhL3pgiMgEJEpG0IAEb7106wL3WVMeTIm1nSdMLzA/b5kUd2GMq6vBwQwNIk1NWQNbNUXJfN4bTLUdJ6QmZWJNbetD2d8E1n/0XvJXikdP+PMCrvp08nvAEeozA6rI9ZhQAAAABJRU5ErkJggg==), auto;
+}
+
+/* Change cursor to crosshair when hovering over an interactive spot on the image */
+#image-container area:hover, a:hover, .place-item:hover {
+    cursor: url("/img/xmedium.png"), auto; /* 'auto' as a fallback cursor */
+}
+
+/* Reset cursor for the header and footer */
+.header-container, .footer-text {
+    cursor: default;
+}
+.short-break {
+  height: 1px; 
+  background: #000;  /* Or the color of your choice */
+  transform-origin: 50% 50%;
+  transform: scaleY(0.5);  /* This scales the 1px height to 0.5 pixels visually */
+}
+.x-marker {
+    position: absolute;
+    width: 20px; 
+    height: 20px;
+    background: url("/img/xsmall.png") no-repeat center center; 
+    background-size: contain;
+    pointer-events: none;
+}
+.counter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 10;
+    border: 1px solid black; /* This line adds a black border */
+}
+.tooltip {
+    position: absolute; /* Use fixed positioning to position relative to the viewport */
+    top: 350px; /* Place it 50% from the top */
+    left: 50%; /* Place it 50% from the left */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 10;
+    border: 1px solid black; /* This line adds a black border */
+    transform: translate(-50%, -50%);
+    display: none; 
+}
+.restart-button {
+    position: absolute;
+    top: 20%;
+    right: 24%; /* Adjust to position it correctly */
+    padding: 10px 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8); /* original colour: background-color: #333; color: white; */
+    color: black;
+    cursor: pointer;
+    border-radius: 4px;
+    z-index: 10; /* this doesn't seem to be doing anything */
+    border: 1px solid black; /* This line adds a black border */
+    font-size: 1rem;
+}
+
+.restart-button:hover {
+    background-color: #555;
+}
+html {
+scroll-behavior: auto;
+}
+.restart-button.disabled {
+    pointer-events: none; /* This will make the button unclickable */
+}
+
+</style>
+
+<h1 class="center-wrapper2"><img src="/img/treasure-map.png" alt="Treasure Map">"Treasure Map" Heritage Hunt</h1>
+<p>The below is a map of Adelaide's Central Business District, aiming to highlight differences in architecture and infrastructure between settlement and now.</p>
+<p>🗺️ This map was drawn in the year 1935 <a href="https://www.experienceadelaide.com.au/photo-library/historical-maps-of-adelaide/veale-map-1935/">by the engineer W.C.D. Veale!</a></p>
+<p>🔍 As you move your cursor over the map, it will transform into an "<span style="color:red"><b>X</b></span>" over interactive spots. Clicking these areas will reveal historical insights.</p>
+<p>Try clicking on Hindmarsh Square!</p>
+
+<script type="text/javascript">
+window.onload = function() {
+t = document.querySelector('#image-container')
+cooldown_t = 0
+t.addEventListener('mousemove', (e) => {
+    clearTimeout(cooldown_t)
+    copy = e
+    cooldown_t = setTimeout(copy => {
+        var rect = t.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        console.log("x:" + x + " y:" + y);
+    }, 250)
+})
+};
+
+
+</script>
+
+<div id="image-container">
+  <img src="/img/Veale-Map-1935.jpg" id="image-map" alt="Adelaide CBD" usemap="#image-map">
+    <button class="restart-button">Restart Game</button>
+  <div id="tooltip" class="tooltip">Tooltip</div>
+    <map name="image-map">
+      <!-- new coordinates     <area shape="circle" coords="2537,3547,99" data-id="area1" data-popup="popup1">      -->
+      <area shape="rect" coords="410,570,435,615" data-id="area1" data-popup="popup1" data-tooltip-text="Hindmarsh Square" data-marker-coordinates="430,620">
+      <area shape="rect" coords="270,500,340,535" data-id="area2" data-popup="popup2" data-tooltip-text="Railway Station" data-marker-coordinates="300,560">
+      <area shape="rect" coords="300,540,350,580" data-id="area3" data-popup="popup3" data-tooltip-text="Hindley Street" data-marker-coordinates="340, 590">
+      <area shape="rect" coords="220,570,260,625" data-id="area4" data-popup="popup4" data-tooltip-text="Light Square" data-marker-coordinates="245,620">
+      <!-- <area shape="rect" coords="605,710,673,850" data-id="area5" data-popup="popup5" data-tooltip-text="Bottom oval" data-marker-coordinates="605,780">
+      <area shape="rect" coords="230,700,259,750" data-id="area6" data-popup="popup6" data-tooltip-text="Whitmore Square" data-marker-coordinates="253,752">
+      <area shape="rect" coords="320,650,350,715" data-id="area7" data-popup="popup7" data-tooltip-text="Victoria Square" data-marker-coordinates="342,688">
+      <area shape="rect" coords="415,700,440,750" data-id="area8" data-popup="popup8" data-tooltip-text="Hurtle Square" data-marker-coordinates="430,750">
+      <area shape="rect" coords=",,," data-id="area9" data-popup="popup9" data-tooltip-text="Hurtle Square" data-marker-coordinates="605,780">
+      <area shape="rect" coords=",,," data-id="area10" data-popup="popup10" data-tooltip-text="Hurtle Square" data-marker-coordinates="605,780">
+      <area shape="rect" coords=",,," data-id="area11" data-popup="popup11" data-tooltip-text="Hurtle Square" data-marker-coordinates="605,780">
+      <area shape="rect" coords=",,," data-id="area12" data-popup="popup12" data-tooltip-text="Hurtle Square" data-marker-coordinates="605,780">
+      <area shape="rect" coords=",,," data-id="area13" data-popup="popup13" data-tooltip-text="Hurtle Square" data-marker-coordinates="605,780">
+      <area shape="rect" coords=",,," data-id="area14" data-popup="popup14" data-tooltip-text="Hurtle Square" data-marker-coordinates="605,780">
+      <area shape="rect" coords=",,," data-id="area15" data-popup="popup15" data-tooltip-text="Hurtle Square" data-marker-coordinates="605,780">
+      <area shape="rect" coords=",,," data-id="area16" data-popup="popup16" data-tooltip-text="Hurtle Square" data-marker-coordinates="605,780">
+      <area shape="rect" coords=",,," data-id="area17" data-popup="popup17" data-tooltip-text="Hurtle Square" data-marker-coordinates="605,780"> -->
+  </map>
+  <div id="popup1" class="popup">
+      <img src="/img/hindmarsh.jpg" alt="Photo 1">
+      <p>People walk by while horses and carts trot the dry and dusty dirt roads. Due to the exposure time it took to capture this photograph, <a href="/heritage_map/hindmarsh">[read more...]</a></p>
+      <p><a href="/360/streetviewhindmarsh/">Link to VR view.</a></p>
+  </div>
+  <div id="popup2" class="popup">
+      <img src="/img/adelaide/railwaysmall.jpg" alt="Photo 2">
+      <p>
+        The original station, a charming limestone structure, was established in 1856 and was the first Government-owned and steam-operated railway in the British Empire. <a href="/heritage_map/railway">[read more...]</a></p>
+        <p><a href="/360/streetviewrailway/">Link to VR view.</a></p>
+    </div>
+    <div id="popup3" class="popup">
+        <img src="/img/adelaide/hindleysmall.jpg" alt="Photo 2">
+        <p>This view is of considerable activity, as numerous people go about their daily business. A young family, children in hand, cross King William Street, while <a href="/heritage_map/hindley">[read more...]</a></p>
+        <p><a href="/360/streetviewhindley/">Link to VR view.</a></p>
+      </div>
+      <div id="popup4" class="popup">
+        <img src="/img/adelaide/lightsmall.jpg" alt="Photo 2">
+        <p>A horse and cart trot towards Currie Street where three men hurriedly cross the busy intersection. Meanwhile a hatted individual inspects the <a href="/heritage_map/light">[read more...]</a></p>
+        <p><a href="/360/streetviewlight/">Link to VR view.</a></p>
+      </div>
+      <div id="popup5" class="popup">
+        <img src="/img/adelaide/photos.jpg" alt="Photo 2">
+        <p>A horse and cart trot towards Currie Street where three men hurriedly cross the busy intersection. Meanwhile a hatted individual inspects the <a href="/heritage_map/light">[read more...]</a></p>
+        <p><a href="/360/link/">Link to VR view.</a></p>
+      </div>
+      <div id="popup6" class="popup">
+        <img src="/img/adelaide/photos.jpg" alt="Photo 2">
+        <p>A horse and cart trot towards Currie Street where three men hurriedly cross the busy intersection. Meanwhile a hatted individual inspects the <a href="/heritage_map/light">[read more...]</a></p>
+        <p><a href="/360/link/">Link to VR view.</a></p>
+      </div>
+      <div id="popup7" class="popup">
+        <img src="/img/adelaide/photos.jpg" alt="Photo 2">
+        <p>A horse and cart trot towards Currie Street where three men hurriedly cross the busy intersection. Meanwhile a hatted individual inspects the <a href="/heritage_map/light">[read more...]</a></p>
+        <p><a href="/360/link/">Link to VR view.</a></p>
+      </div>
+      <div id="popup8" class="popup">
+        <img src="/img/adelaide/photos.jpg" alt="Photo 2">
+        <p>A horse and cart trot towards Currie Street where three men hurriedly cross the busy intersection. Meanwhile a hatted individual inspects the <a href="/heritage_map/light">[read more...]</a></p>
+        <p><a href="/360/link/">Link to VR view.</a></p>
+      </div>
+      <div id="popup9" class="popup">
+        <img src="/img/adelaide/photos.jpg" alt="Photo 2">
+        <p>A horse and cart trot towards Currie Street where three men hurriedly cross the busy intersection. Meanwhile a hatted individual inspects the <a href="/heritage_map/light">[read more...]</a></p>
+        <p><a href="/360/link/">Link to VR view.</a></p>
+      </div>
+      <div id="popup10" class="popup">
+        <img src="/img/adelaide/photos.jpg" alt="Photo 2">
+        <p>A horse and cart trot towards Currie Street where three men hurriedly cross the busy intersection. Meanwhile a hatted individual inspects the <a href="/heritage_map/light">[read more...]</a></p>
+        <p><a href="/360/link/">Link to VR view.</a></p>
+      </div>
+</div>
+<script type="text/javascript" src="/js/imagesizermap.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // imageMapResize();
+
+    // ... existing JavaScript code ...
+
+    // Check if there's a saved scroll position in sessionStorage
+    if(sessionStorage.getItem('scrollPosition')) {
+        const savedPosition = parseInt(sessionStorage.getItem('scrollPosition'), 10);
+
+        // Use the smooth scroll effect to scroll to that position
+        window.scrollTo({
+            top: savedPosition,
+            behavior: "auto"
+        });
+    }
+
+    // Save the current scroll position to sessionStorage when leaving the page
+    window.addEventListener('beforeunload', function() {
+        sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+    });
+});
+
+</script>
+<!-- originally commented out auto scroll because it might look less profesh but maybe I should keep it -->
+<!--<p style="font-size:14px;"><i>All descriptions' credit to Alexander Cocks on his history Facebook group, <a href="https://www.facebook.com/groups/3448281651944687/">Adelaide Then And Now.</i></a></p>-->
